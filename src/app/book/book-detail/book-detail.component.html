@@ -1,16 +1,32 @@
-<h2>Chi tiết sách</h2> | <a routerLink="/books">Xem danh sách</a>
-
-<table>
-  <tr>
-    <td>Tên</td>
-    <td>{{book.title}}</td>
-  </tr>
-  <tr>
-    <td>Tác giả</td>
-    <td>{{book.author}}</td>
-  </tr>
-  <tr>
-    <td>Description</td>
-    <td>{{book.description}}</td>
-  </tr>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <h2>Chi tiết sách</h2>
+    </div>
+    <div class="col-4">
+      <a class="btn btn-primary" style="float: right" routerLink="/books">Xem danh sách</a>
+    </div>
+  </div>
+  <div class="col-2"></div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Tên</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{book.title}}" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail2" class="form-label">Tác giả</label>
+          <input type="text" class="form-control" id="exampleInputEmail2" value="{{book.author}}" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Description</label>
+          <textarea class="form-control" value="{{book.description}}" id="exampleInputPassword1" cols="30" rows="10" readonly></textarea>
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

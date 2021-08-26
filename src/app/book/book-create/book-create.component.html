@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-12">
-      <h2>Thêm sách mới</h2>
+      <h2 class="jasmine-banner">Thêm sách mới</h2>
     </div>
   </div>
   <div class="row">
@@ -18,11 +18,11 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Description</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="description">
+          <textarea class="form-control" formControlName="description" id="exampleInputPassword1" cols="30" rows="10"></textarea>
         </div>
-        <div class="mb-3">
-          <button type="submit" class="btn btn-primary">Thêm sách mới</button>
-          <a routerLink="/books" class="btn btn-success">Thoát</a>
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-primary m-2">Thêm sách mới</button>
+          <a routerLink="/books" class="btn btn-success m-3">Thoát</a>
         </div>
       </form>
     </div>
@@ -30,24 +30,3 @@
   </div>
 </div>
 
-
-<!--<form>-->
-<!--  <table>-->
-<!--    <tr>-->
-<!--      <td>Tên</td>-->
-<!--      <td><input type="text" formControlName="title"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <td>Tác giả</td>-->
-<!--      <td><input type="text" formControlName="author"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <td>Description</td>-->
-<!--      <td><input type="text" formControlName="description"></td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      <td><button>Thêm sách mới</button></td>-->
-<!--      <td></td>-->
-<!--    </tr>-->
-<!--  </table>-->
-<!--</form>-->

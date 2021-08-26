@@ -1,24 +1,33 @@
-<h2>Cập nhật sách</h2>
-
-<form (ngSubmit)="update(id)" [formGroup]="bookForm">
-  <table>
-    <tr>
-      <td>Tên</td>
-      <td><input type="text" formControlName="title" [value]="book.title"></td>
-    </tr>
-    <tr>
-      <td>Tác giả</td>
-      <td><input type="text" formControlName="author" [value]="book.author"></td>
-    </tr>
-    <tr>
-      <td>Description</td>
-      <td><input type="text" formControlName="description" [value]="book.description"></td>
-    </tr>
-    <tr>
-      <td>
-        <button>Cập nhật</button>
-      </td>
-      <td><a routerLink="/books">Thoát</a></td>
-    </tr>
-  </table>
-</form>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <h2 class="jasmine-banner">Cập nhật sách</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form (ngSubmit)="update(id)" [formGroup]="bookForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Tên</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title" [value]="book.title">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail2" class="form-label">Tác giả</label>
+          <input type="text" class="form-control" id="exampleInputEmail2" formControlName="author"
+                 [value]="book.author">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Description</label>
+          <textarea class="form-control" formControlName="description" id="exampleInputPassword1" cols="30" rows="10"
+                    [value]="book.description"></textarea>
+        </div>
+        <div class="mb-3 text-center">
+          <button type="submit" class="btn btn-primary m-2">Cập nhật</button>
+          <a routerLink="/books" class="btn btn-success m-3">Thoát</a>
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
