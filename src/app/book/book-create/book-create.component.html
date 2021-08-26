@@ -1,22 +1,53 @@
-<h2>Thêm sách mới</h2>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <h2>Thêm sách mới</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <form (ngSubmit)="submit()" [formGroup]="bookForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Tên</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail2" class="form-label">Tác giả</label>
+          <input type="text" class="form-control" id="exampleInputEmail2" formControlName="author">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Description</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="description">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Thêm sách mới</button>
+          <a routerLink="/books" class="btn btn-success">Thoát</a>
+        </div>
+      </form>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
 
-<form (ngSubmit)="submit()" [formGroup]="bookForm">
-  <table>
-    <tr>
-      <td>Tên</td>
-      <td><input type="text" formControlName="title"></td>
-    </tr>
-    <tr>
-      <td>Tác giả</td>
-      <td><input type="text" formControlName="author"></td>
-    </tr>
-    <tr>
-      <td>Description</td>
-      <td><input type="text" formControlName="description"></td>
-    </tr>
-    <tr>
-      <td><button>Thêm sách mới</button></td>
-      <td><a routerLink="/books">Thoát</a></td>
-    </tr>
-  </table>
-</form>
+
+<!--<form>-->
+<!--  <table>-->
+<!--    <tr>-->
+<!--      <td>Tên</td>-->
+<!--      <td><input type="text" formControlName="title"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Tác giả</td>-->
+<!--      <td><input type="text" formControlName="author"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Description</td>-->
+<!--      <td><input type="text" formControlName="description"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td><button>Thêm sách mới</button></td>-->
+<!--      <td></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</form>-->

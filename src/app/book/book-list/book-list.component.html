@@ -1,18 +1,41 @@
-<h2>Danh sách các cuốn sách</h2>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12"><h2>Danh sách các cuốn sách</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-6"><p>Có {{books.length}} cuốn sách</p></div>
+    <div class="col-2"><a class="btn btn-primary" routerLink="create">Thêm sách mới</a></div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tên sách</th>
+          <th scope="col">Tác giả</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books, index as i">
+          <td scope="row">{{i + 1}}</td>
+          <td><a [routerLink]="['detail',book.id]">{{book.title}}</a></td>
+          <td>{{book.author}}</td>
+          <td><a class="btn btn-danger" [routerLink]="['delete',book.id]">Xóa</a> | <a class="btn btn-warning"
+                                                                                       [routerLink]="['edit',book.id]">Sửa</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
 
-<p>Có {{books.length}} cuốn sách</p> | <a routerLink="create">Thêm sách mới</a>
 
-<table border="1px">
-  <tr>
-    <td>#</td>
-    <td>Tên sách</td>
-    <td>Tác giả</td>
-    <td></td>
-  </tr>
-  <tr *ngFor="let book of books, index as i">
-    <td>{{i + 1}}</td>
-    <td><a [routerLink]="['detail',book.id]">{{book.title}}</a></td>
-    <td>{{book.author}}</td>
-    <td><a [routerLink]="['delete',book.id]">Xóa</a> | <a [routerLink]="['edit',book.id]">Sửa</a></td>
-  </tr>
-</table>
+
