@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Book} from '../../model/book';
 import {BookService} from '../../service/book.service';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-book-delete',
@@ -10,6 +11,11 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 })
 export class BookDeleteComponent implements OnInit {
   book: Book = {};
+  bookForm: FormGroup = new FormGroup({
+    title: new FormControl(),
+    author: new FormControl(),
+    description: new FormControl(),
+  });
   id: number;
 
   constructor(private bookService: BookService,
@@ -26,7 +32,11 @@ export class BookDeleteComponent implements OnInit {
 
   findById(id: number) {
     return this.bookService.findById(id).subscribe(data => {
-      this.book = data;
+      this.bookForm = new FormGroup({
+        title: new FormControl(data.title),
+        author: new FormControl(data.author),
+        description: new FormControl(data.description),
+      });
     });
   }
 
